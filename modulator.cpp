@@ -66,7 +66,7 @@ void Modulator::initQPSK() {
 void Modulator::initQAM16() {
     const double norm = 1.0 / sqrt(10.0);
     for (int i = 0; i < 16; i++) {
-        // ??????? ?? 3GPP TS 38.211
+        // Expressions from 3GPP TS 38.211
         int I = (1 - 2 * (i & 0b1)) * (2 - (1 - 2 * ((i >> 2) & 0b1)));
         int Q = (1 - 2 * ((i >> 1) & 0b1)) * (2 - (1 - 2 * (i >> 3)));
 
@@ -77,7 +77,7 @@ void Modulator::initQAM16() {
 void Modulator::initQAM64() {
     const double norm = 1.0 / sqrt(42.0);
     for (int i = 0; i < 64; i++) {
-        // ??????? ?? 3GPP TS 38.211
+        // Expressions from 3GPP TS 38.211
         int I = (1 - 2 * (i & 0b1)) * (4 - ((1 - 2 * ((i >> 2) & 0b1)) * (2 - (1 - 2 * ((i >> 4) & 0b1)))));
         int Q = (1 - 2 * ((i >> 1) & 0b1)) * (4 - ((1 - 2 * ((i >> 3) & 0b1)) * (2 - (1 - 2 * (i >> 5)))));
 
